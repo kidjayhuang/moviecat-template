@@ -1,0 +1,38 @@
+<!--电影列表开始-->
+<div class="list">
+    <ul>
+        <h1>in thetera</h1>
+        <li ng-repeat="item in list.subjects">
+            <a href="#/details">
+                <img src="{{item.images.large}}" alt="">
+            </a>
+            <div class="meta">
+                <h4><span>{{item.title}}</span> <em>{{item.rationg.average}}分</em></h4>
+                <div class="otherinfo">类型:<span>{{item.genres.join(',')}}</span></div>
+            </div>
+        </li>
+
+    </ul>
+    <div class="paging">
+        <label>总共：{{total}}条记录,第{{page}}/{{totalPage}}页;</label>
+        <!-- 加上disable类样式，表示按钮禁用状态 -->
+        <button class="prev" ng-class="{'disable': page<=1}" ng-click="gopage(page -1)">上一页</button>
+        <button class="next"   ng-class="{'disable': page>=totalPage}" ng-click="gopage(page +1)">下一页</button>
+    </div>
+
+    <!--- 设置loading样式的div ----->
+    <div class="loading-box" ng-show="isLoading"><!-- 动态的控制loading的消失与隐藏 --->
+        <div id="fountainG" >
+            <div id="fountainG_1" class="fountainG"></div>
+            <div id="fountainG_2" class="fountainG"></div>
+            <div id="fountainG_3" class="fountainG"></div>
+            <div id="fountainG_4" class="fountainG"></div>
+            <div id="fountainG_5" class="fountainG"></div>
+            <div id="fountainG_6" class="fountainG"></div>
+            <div id="fountainG_7" class="fountainG"></div>
+            <div id="fountainG_8" class="fountainG"></div>
+        </div>
+    </div>
+
+</div>
+<!--电影列表结束-->
